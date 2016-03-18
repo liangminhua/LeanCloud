@@ -27,7 +27,7 @@ namespace LeanCloud
             }
         }
         public string MobilePhoneNumber { get; set; }
-        public bool IsAuthenticated { get { return _IsAuthenticated; } set { _IsAuthenticated = value; } }
+        public bool IsAuthenticated { get { return _IsAuthenticated;  } }
         public static AVUser CurrentUser;
         public string ObjectId;
         public bool EmailVerified;
@@ -46,7 +46,7 @@ namespace LeanCloud
                 {
                     CurrentUser = Newtonsoft.Json.JsonConvert.DeserializeObject<AVUser>(responseBody);
                     CurrentUser.Save();
-                    CurrentUser.IsAuthenticated = true;
+                    CurrentUser._IsAuthenticated = true;
                 }
                 else
                 {
