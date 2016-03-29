@@ -31,25 +31,26 @@ Newtonsoft.Json version="8.0.2"
 
 if you want to call the asynchronous methods， you need to add Microsoft.Bcl，Microsoft.Bcl.Build， Microsoft.Bcl.Async (same version). Or use this  to disable the warmning.
 
- Maybe you should add follow code in app.config.
+Maybe you should add follow code in app.config.
+```xml
 <?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <runtime>
-    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-      <dependentAssembly>
-        <assemblyIdentity name="System.Runtime" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-2.6.10.0" newVersion="2.6.10.0" />
-      </dependentAssembly>
-      <dependentAssembly>
-        <assemblyIdentity name="System.Threading.Tasks" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-2.6.10.0" newVersion="2.6.10.0" />
-      </dependentAssembly>
-      <dependentAssembly>
-        <assemblyIdentity name="System.Net.Http" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-2.2.29.0" newVersion="2.2.29.0" />
-      </dependentAssembly>
-    </assemblyBinding>
-  </runtime>
-</configuration>
-
+ <configuration>
+   <runtime>
+     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+       <dependentAssembly>
+         <assemblyIdentity name="System.Runtime" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+         <bindingRedirect oldVersion="0.0.0.0-2.6.10.0" newVersion="2.6.10.0" />
+       </dependentAssembly>
+       <dependentAssembly>
+         <assemblyIdentity name="System.Threading.Tasks" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+         <bindingRedirect oldVersion="0.0.0.0-2.6.10.0" newVersion="2.6.10.0" />
+       </dependentAssembly>
+       <dependentAssembly>
+         <assemblyIdentity name="System.Net.Http" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+         <bindingRedirect oldVersion="0.0.0.0-2.2.29.0" newVersion="2.2.29.0" />
+       </dependentAssembly>
+     </assemblyBinding>
+   </runtime>
+ </configuration>
+```
 ## Powered By yaco
