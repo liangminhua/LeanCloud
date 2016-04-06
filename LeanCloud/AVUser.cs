@@ -9,7 +9,6 @@ namespace LeanCloud
 {
     public class AVUser : ApplicationSettingsBase
     {
-        private bool _IsAuthenticated = false;
         [UserScopedSetting()]
         public string Username
         {
@@ -27,7 +26,7 @@ namespace LeanCloud
             }
         }
         public string MobilePhoneNumber { get; set; }
-        public bool IsAuthenticated { get { return _IsAuthenticated;  } }
+        public bool IsAuthenticated { get { return string.IsNullOrEmpty(SessionToken)? false:true; } }
         public static AVUser CurrentUser;
         public string ObjectId;
         public bool EmailVerified;
@@ -46,7 +45,6 @@ namespace LeanCloud
                 {
                     CurrentUser = Newtonsoft.Json.JsonConvert.DeserializeObject<AVUser>(responseBody);
                     CurrentUser.Save();
-                    CurrentUser._IsAuthenticated = true;
                 }
                 else
                 {
